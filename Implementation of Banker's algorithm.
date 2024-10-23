@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    int count = 0, m, n, process, temp, resource;
+    int allocation_table[5] = {0, 0, 0, 0, 0};
+    int available[5], current[5][5], maximum_claim[5][5];
+    int maximum_resource[5], running[5], safe_state = 0;
+
+    printf("Enter The Total Number Of Processes: ");
+    scanf("%d", &process);
+
+    for (m = 0; m < process; m++)
+    {
+        running[m] = 1;
+        count++;
+    }
+
+    printf("Enter The Total Number Of Resources To Allocate: ");
+    scanf("%d", &resource);
+
+    printf("Enter The Claim Vector: ");
+    for (m = 0; m < resource; m++)
+    {
+        scanf("%d", &maximum_resource[m]);
+    }
+
+    printf("Enter Allocated Resource Table: ");
+    for (m = 0; m < process; m++)
+    {
+        for (n = 0; n < resource; n++)
+        {
+            scanf("%d", &current[m][n]);
+		}
